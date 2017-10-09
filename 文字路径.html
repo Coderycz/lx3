@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="node_modules\d3\d3.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+
+	<script>
+		var svg = d3.select("body").append("svg")
+		.attr({
+													width: 500,
+													height: 500
+												})
+		svg.append("path").attr({
+			id: "mypa",
+			d: 'M50 100 Q350 50 150 250 Q250 540 50 250'
+		})
+		svg.append("text").attr({
+					x: 10,
+					y: 10
+				})
+				.style({fill: "red"})
+				.append("textPath").attr("xlink:href", "#mypa")
+				.text("过山车来啦，就是贷款记录")
+	</script>
+</body>
+</html>

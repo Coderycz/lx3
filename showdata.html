@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="node_modules\d3\d3.js"></script>
+	<style>
+		.bar{
+			width: 30px;
+			display: inline-block;	
+			margin: 5px;
+			background: #999;
+		}
+	</style>
+</head>
+<body>
+this is a message<br>
+	<script>
+	var dataset = [ 5, 10, 15, 20, 25 ];
+	var datalist = d3.range(25).map(function(){
+		return d3.round(d3.random.normal(15,8)(),1);
+	});
+	console.log(datalist)
+
+    d3.select("body").selectAll("div")
+    .data(datalist)
+    .enter()
+    .append("div")
+    .attr("class","bar")
+    .style("height",function(d){
+    	return (d*7)+"px"
+    });
+	</script>
+</body>
+</html>
